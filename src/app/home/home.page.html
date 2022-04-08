@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="heart-circle-outline"></ion-icon> Calculadora do Amor <ion-icon name="heart-circle-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <p>Insira seu nome:</p>
+    <input type="text" [(ngModel)]="nomeX">
+
+    <br>
+    <br>
+
+    <p>Insira o nome do seu parceiro/a:</p>
+    <input type="text" [(ngModel)]="nomeY">
+
+    <br>
+    <br>
+
+    <ion-button (click)="Misturar()">
+      Começa o Shippe &nbsp; <ion-icon name="heart-outline"></ion-icon>
+    </ion-button>
+
+    <br>
+    <br>
+
+    <div class="h-100 d-flex justify-content-center align-items-center">
+      <div class="display-1 fw-bold" [class.text-danger]="sorteando" [class.scale-up-center]="!sorteando">
+        {{ resultado }}% <br><br>
+        {{ mensagem }} <br><br>
+        <img src="{{ img }}" alt="">
+      </div>
+    </div>
+  </div>
+</ion-content>
